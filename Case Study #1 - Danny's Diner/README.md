@@ -1,10 +1,10 @@
-![](image/README/1721576795297.png)
 
+![example](image/README/1721576795297.png)
 # Introduction
 
 Danny loves Japanese food and opened Danny’s Diner in early 2021, specializing in sushi, curry, and ramen. To improve his restaurant, he needs help analyzing customer data to understand visiting patterns, spending habits, and favorite menu items. This analysis will guide him in possibly expanding the customer loyalty program and generating user-friendly datasets for his team.
 
-## Data
+# Data
 
 Danny has shared with you 3 key datasets for this case study:
 
@@ -12,11 +12,12 @@ Danny has shared with you 3 key datasets for this case study:
 * menu
 * members
 
-## Entity Relationship Diagram
+# Entity Relationship Diagram
 
-![1721576761437](image/README/1721576761437.png)
+![example](image/README/1721576761437.png)
 
-## Case Study Questions
+
+# Case Study Questions
 
 1. What is the total amount each customer spent at the restaurant?
 2. How many days has each customer visited the restaurant?
