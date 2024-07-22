@@ -1,11 +1,11 @@
 # 1. What is the total amount each customer spent at the restaurant?
 ```sql
-SELECT 
-    customer_id,
-    SUM(price) AS total_spent
-FROM sales AS s
-INNER JOIN menu AS m ON s.product_id = m.product_id
-GROUP BY customer_id;# 1. What is the total amount each customer spent at the restaurant?
+select 
+	customer_id,
+	sum(price) as total_spent
+from sales as s
+inner join menu as m on s.product_id = m.product_id
+group by customer_id 
 ```
 RESULT:
 
@@ -46,12 +46,12 @@ RESULT:
 # 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 ```SQL
 select top(1)
-	M.product_id,
-	M.product_name, 
-	count(S.order_date) as most_purchased_item
-from sales as S 
-inner join menu as M on S.product_id = M.product_id
-group by M.product_name, m.product_id
+	m.product_id,
+	m.product_name, 
+	count(s.order_date) as most_purchased_item
+from sales as s 
+inner join menu as m on s.product_id = m.product_id
+group by m.product_name, m.product_id
 order by most_purchased_item desc
 ```
 RESULT:
