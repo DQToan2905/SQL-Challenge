@@ -192,7 +192,7 @@ group by s.customer_id
 ![image](https://github.com/user-attachments/assets/4e1b0dd7-ef36-44e1-a268-584b9403bfc0)
 
 # Bonus Questions
-## Join All The Things
+## 1. Join All The Things
 ```SQL
 select 
 	s.customer_id,
@@ -213,7 +213,7 @@ order by s.customer_id asc, s.order_date, m.price desc
 
 ![image](https://github.com/user-attachments/assets/08f31452-0b25-4be5-9fdc-e943e2a0dd78)
 
-## Rank All The Things
+## 2. Rank All The Things
 ```SQL
 select 
 	s.customer_id,
