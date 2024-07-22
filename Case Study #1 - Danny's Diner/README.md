@@ -15,7 +15,7 @@ The menu table maps the product_id to the actual product_name and price of each 
 ### Table 3: members
 The final members table captures the join_date when a customer_id joined the beta version of the Danny’s Diner loyalty program.
 ![image](https://github.com/user-attachments/assets/65ad950d-6837-4c1c-85fb-ffdad385a0d9)
-The final members table captures the <span style="color: blue;">join_date</span> when a <span style="color: blue;">customer_id</span> joined the beta version of Danny’s Diner loyalty program.
+
 # Entity Relationship Diagram
 
 ![1721576761437](https://github.com/user-attachments/assets/1134e0a0-685b-4b1e-99c2-c95e46920245)
