@@ -8,7 +8,7 @@ from sales as s
 inner join menu as m on s.product_id = m.product_id
 group by customer_id 
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/d2b8ce5a-fbf9-4737-bb95-17fa47d4da9a)
 
@@ -20,7 +20,7 @@ select
 from sales 
 group by customer_id
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/e6c281bb-bb4f-4961-9993-5ff4433f6bc4)
 
@@ -40,7 +40,7 @@ from(
 ) as first_product
 where rank = 1
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/1c8a45c7-8a04-49e4-9d71-d3fab4437687)
 
@@ -55,7 +55,7 @@ inner join menu as m on s.product_id = m.product_id
 group by m.product_name, m.product_id
 order by most_purchased_item desc
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/3e4a3df6-fa73-4810-8833-8cf5386e8017)
 
@@ -80,7 +80,7 @@ from ranked_item
 where rank = 1
 order by customer_id
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/f952c87b-4ef5-411b-af34-0b1a22be0078)
 
@@ -107,7 +107,7 @@ select
 from rank_order_after_join_date
 where rank = 1
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/0cb08741-3d6b-4a17-a5db-9a7e791e4b9b)
 
@@ -134,7 +134,7 @@ select
 from rank_order_after_join_date
 where rank = 1
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/d76c6745-82c0-42b9-8095-31d69f26b11a)
 
@@ -150,7 +150,7 @@ inner join members as me on s.customer_id = me.customer_id
 where s.order_date < me.join_date
 group by s.customer_id
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/ef33efc8-5e0a-48fe-9fcc-a423df7dbc7e)
 
@@ -167,7 +167,7 @@ from sales as s
 inner join menu as m on s.product_id = m.product_id 
 group by s.customer_id
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/9cb0f742-ac95-4cad-9585-979b9a44f390)
 
@@ -187,9 +187,56 @@ left join members as me on s.customer_id = me.customer_id
 where s.customer_id in ('A','B') and s.order_date <= '2021-01-31'
 group by s.customer_id
 ```
-RESULT:
+**RESULT:**
 
 ![image](https://github.com/user-attachments/assets/4e1b0dd7-ef36-44e1-a268-584b9403bfc0)
+
+# Bonus Questions
+## Join All The Things
+```SQL
+select 
+	s.customer_id,
+	s.order_date,
+	m.product_name,
+	m.price,
+	case
+		when s.order_date < me.join_date then 'N'`
+		when s.order_date >= me.join_date then 'Y'
+		else 'N'
+		end as member
+from sales as s		
+inner join menu as m on s.product_id = m.product_id  
+left join members as me on s.customer_id = me.customer_id 
+order by s.customer_id asc, s.order_date, m.price desc
+```
+**RESULT:**
+
+![image](https://github.com/user-attachments/assets/08f31452-0b25-4be5-9fdc-e943e2a0dd78)
+
+## Rank All The Things
+```SQL
+select 
+	s.customer_id,
+	s.order_date,
+	m.product_name,
+	m.price,
+	case
+		when s.order_date < me.join_date then 'N'
+		when s.order_date >= me.join_date then 'Y'
+		else 'N'
+	end as member,
+	case
+		when s.order_date >= me.join_date then rank() over (partition by s.customer_id order by s.order_date)
+		else Null
+	end as Ranking 
+from sales as s		
+inner join menu as m on s.product_id = m.product_id  
+left join members as me on s.customer_id = me.customer_id 
+order by s.customer_id asc, s.order_date asc, m.price desc
+```
+**RESULT:**
+
+![image](https://github.com/user-attachments/assets/e1216380-2009-4d6a-a751-9030e3020ed8)
 
 
 
