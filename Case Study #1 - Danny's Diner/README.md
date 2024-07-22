@@ -10,6 +10,8 @@ Danny has shared with you 3 key datasets for this case study:
 * sales
 * menu
 * members
+## Table 1: Sales
+![image](https://github.com/user-attachments/assets/c24d082c-6042-4c4f-bd48-78af7ea28449)
 
 # Entity Relationship Diagram
 
