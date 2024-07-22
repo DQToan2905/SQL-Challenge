@@ -7,9 +7,9 @@ Danny loves Japanese food and opened Danny’s Diner in early 2021, specializing
 
 Danny has shared with you 3 key datasets for this case study:
 
-* sales
-* menu
-* members
+* sales: The sales table captures all customer_id level purchases with an corresponding order_date and product_id information for when and what menu items were ordered.
+* menu: The menu table maps the product_id to the actual product_name and price of each menu item.
+* members: The final members table captures the join_date when a customer_id joined the beta version of the Danny’s Diner loyalty program.
 ### Table 1: sales
 ![image](https://github.com/user-attachments/assets/c24d082c-6042-4c4f-bd48-78af7ea28449)
 ### Table 2: menu
