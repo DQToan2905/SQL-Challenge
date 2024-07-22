@@ -8,6 +8,7 @@ INNER JOIN menu AS m ON s.product_id = m.product_id
 GROUP BY customer_id;# 1. What is the total amount each customer spent at the restaurant?
 ```
 RESULT:
+
 ![image](https://github.com/user-attachments/assets/d2b8ce5a-fbf9-4737-bb95-17fa47d4da9a)
 
 # 2. How many days has each customer visited the restaurant?
@@ -19,6 +20,7 @@ from sales
 group by customer_id
 ```
 RESULT:
+
 ![image](https://github.com/user-attachments/assets/e6c281bb-bb4f-4961-9993-5ff4433f6bc4)
 
 # 3. What was the first item from the menu purchased by each customer?
@@ -38,6 +40,7 @@ from(
 where rank = 1
 ```
 RESULT:
+
 ![image](https://github.com/user-attachments/assets/1c8a45c7-8a04-49e4-9d71-d3fab4437687)
 
 # 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
@@ -52,4 +55,5 @@ group by M.product_name, m.product_id
 order by most_purchased_item desc
 ```
 RESULT:
+
 ![image](https://github.com/user-attachments/assets/3e4a3df6-fa73-4810-8833-8cf5386e8017)
