@@ -152,7 +152,7 @@ group by s.customer_id
    Bonus Questions
    ----------------*/
 
--- Join All The Things
+-- 1. Join All The Things
 select 
 	s.customer_id,
 	s.order_date,
@@ -168,7 +168,7 @@ inner join menu as m on s.product_id = m.product_id
 left join members as me on s.customer_id = me.customer_id 
 order by s.customer_id asc, s.order_date, m.price desc
 
--- Rank All The Things
+-- 2. Rank All The Things
 select 
 	s.customer_id,
 	s.order_date,
