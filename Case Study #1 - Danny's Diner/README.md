@@ -1,5 +1,4 @@
-
-![example](image/README/1721576795297.png)
+![image](https://github.com/user-attachments/assets/ca20dc99-84b0-4dcf-b7a4-8b1b90404058)
 # Introduction
 
 Danny loves Japanese food and opened Danny’s Diner in early 2021, specializing in sushi, curry, and ramen. To improve his restaurant, he needs help analyzing customer data to understand visiting patterns, spending habits, and favorite menu items. This analysis will guide him in possibly expanding the customer loyalty program and generating user-friendly datasets for his team.
