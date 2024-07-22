@@ -36,12 +36,12 @@ where rank = 1
 
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 select top(1)
-	M.product_id,
-	M.product_name, 
+	m.product_id,
+	m.product_name, 
 	count(S.order_date) as most_purchased_item
-from sales as S 
-inner join menu as M on S.product_id = M.product_id
-group by M.product_name, m.product_id
+from sales as s
+inner join menu as m on s.product_id = m.product_id
+group by m.product_name, m.product_id
 order by most_purchased_item desc
 
 -- 5. Which item was the most popular for each customer?
