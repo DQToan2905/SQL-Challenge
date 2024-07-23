@@ -1,4 +1,4 @@
-# Case study Questions
+# <p align = "center"> Case study Questions
 ## 1. What is the total amount each customer spent at the restaurant?
 ```sql
 select 
@@ -191,7 +191,7 @@ group by s.customer_id
 
 ![image](https://github.com/user-attachments/assets/4e1b0dd7-ef36-44e1-a268-584b9403bfc0)
 
-# Bonus Questions
+# <p align = "center"> Bonus Questions
 ## 1. Join All The Things
 ```SQL
 select 
